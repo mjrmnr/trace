@@ -14,7 +14,19 @@ export class GameController {
 
         this.map = new Map({
             container: this.viewport,
-            style: 'https://tiles.openfreemap.org/styles/liberty', // style URL
+            style: {
+                version: 8,
+                sources: {},
+                layers: [
+                    {
+                        id: 'background',
+                        type: 'background',
+                        paint: {
+                            'background-color': '#000000'
+                        }
+                    }
+                ]
+            },
             center: [0, 0], // starting position [lng, lat]
             zoom: 2 // starting zoom
         })
