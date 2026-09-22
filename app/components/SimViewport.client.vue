@@ -1,6 +1,34 @@
+<script setup lang="ts">
+import 'maplibre-gl/dist/maplibre-gl.css'
+import { GameController } from '~/editor/gameController'
+
+    const viewport = ref<HTMLDivElement | null>(null)
+
+    let controller: GameController | null = null
+
+    function initViewport() {
+        if (!viewport.value) return
+
+        controller = new GameController()
+
+        controller.attachRenderer(viewport.value)
+    }
+
+    onMounted(async () => {
+        // Wait for the next tick so that we have time to render the DOM once so the viewport is set
+        await nextTick()
+        
+        initViewport()
+    })
+
+    onBeforeUnmount(() => {
+        controller?.dispose()
+    })
+</script>
+
 <template>
     <div class="relative w-full h-dvh overflow-hidden">
-        <canvas ref="viewport" class="sim-viewport"></canvas>
+        <div ref="viewport" class="sim-viewport"></div>
     </div>
 </template>
 
