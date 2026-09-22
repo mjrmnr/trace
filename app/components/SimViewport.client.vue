@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import 'maplibre-gl/dist/maplibre-gl.css'
 import { GameController } from '~/editor/gameController'
 
     const viewport = ref<HTMLDivElement | null>(null)
