@@ -4,7 +4,7 @@ import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
 
 setWorkerUrl(workerUrl)
 
-export class GameController {
+export class MapController {
     private viewport: HTMLDivElement | null = null
 
     private map: Map | null = null

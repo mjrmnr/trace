@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { GameController } from '~/editor/gameController'
+import { MapController } from '~/map/mapController'
 
     const viewport = ref<HTMLDivElement | null>(null)
 
-    let controller: GameController | null = null
+    let controller: MapController | null = null
 
     function initViewport() {
         if (!viewport.value) return
 
-        controller = new GameController()
+        controller = new MapController()
 
         controller.attachRenderer(viewport.value)
     }

@@ -1,4 +1,4 @@
-import type { WorldPoint } from "../geometry"
+import type { SimPoint } from "../geometry"
 import type { Id } from "../ids"
 
 
@@ -23,7 +23,7 @@ export type RoadStructure =
 export type Road = {
     id: RoadId
 
-    geometry: WorldPoint[]
+    geometry: SimPoint[]
 
     roadClass: RoadClass
 

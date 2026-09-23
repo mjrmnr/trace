@@ -1,5 +1,5 @@
 /** A point in the simulation coordinate system, in meters from the origin */
-export type WorldPoint = {
+export type SimPoint = {
     x: number
     y: number
 }
